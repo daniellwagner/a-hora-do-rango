@@ -78,21 +78,6 @@
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="itemDeMenuUsuarioActionPerformed"/>
               </Events>
             </MenuItem>
-            <MenuItem class="javax.swing.JMenuItem" name="copyMenuItem">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Copy"/>
-              </Properties>
-            </MenuItem>
-            <MenuItem class="javax.swing.JMenuItem" name="pasteMenuItem">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Paste"/>
-              </Properties>
-            </MenuItem>
-            <MenuItem class="javax.swing.JMenuItem" name="deleteMenuItem">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Delete"/>
-              </Properties>
-            </MenuItem>
           </SubComponents>
         </Menu>
         <Menu class="javax.swing.JMenu" name="GerarRecomendacao">
@@ -112,6 +97,20 @@
             <MenuItem class="javax.swing.JMenuItem" name="UsuarioNaoCadastrado">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Usuario n&#xe3;o Cadastrado"/>
+              </Properties>
+            </MenuItem>
+          </SubComponents>
+        </Menu>
+        <Menu class="javax.swing.JMenu" name="menuEstabelecimento">
+          <Properties>
+            <Property name="mnemonic" type="int" value="101"/>
+            <Property name="text" type="java.lang.String" value="Estabelecimento"/>
+          </Properties>
+          <SubComponents>
+            <MenuItem class="javax.swing.JMenuItem" name="ListaPorPopularidade">
+              <Properties>
+                <Property name="mnemonic" type="int" value="108"/>
+                <Property name="text" type="java.lang.String" value="Listar por Popularidade"/>
               </Properties>
             </MenuItem>
           </SubComponents>
@@ -175,7 +174,7 @@
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Component id="desktop" pref="397" max="32767" attributes="0"/>
+          <Component id="desktop" pref="399" max="32767" attributes="0"/>
       </Group>
     </DimensionLayout>
   </Layout>

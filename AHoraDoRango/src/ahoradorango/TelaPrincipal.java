@@ -50,12 +50,11 @@ public class TelaPrincipal extends javax.swing.JFrame {
         itemDeMenuSair = new javax.swing.JMenuItem();
         menuInserir = new javax.swing.JMenu();
         itemDeMenuUsuario = new javax.swing.JMenuItem();
-        copyMenuItem = new javax.swing.JMenuItem();
-        pasteMenuItem = new javax.swing.JMenuItem();
-        deleteMenuItem = new javax.swing.JMenuItem();
         GerarRecomendacao = new javax.swing.JMenu();
         UsuarioCadastrado = new javax.swing.JMenuItem();
         UsuarioNaoCadastrado = new javax.swing.JMenuItem();
+        menuEstabelecimento = new javax.swing.JMenu();
+        ListaPorPopularidade = new javax.swing.JMenuItem();
         menuAjuda = new javax.swing.JMenu();
         contentMenuItem = new javax.swing.JMenuItem();
         itemDeMenuSobre = new javax.swing.JMenuItem();
@@ -65,7 +64,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
         desktop.setBackground(new java.awt.Color(255, 204, 0));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\workspace\\AHoraDoRango\\ahoradorango.png")); 
+        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\workspace\\AHoraDoRango\\ahoradorango.png")); // NOI18N
         jLabel1.setText("jLabel1");
         jLabel1.setOpaque(true);
         jLabel1.setBounds(260, 80, 740, 500);
@@ -123,15 +122,6 @@ public class TelaPrincipal extends javax.swing.JFrame {
         });
         menuInserir.add(itemDeMenuUsuario);
 
-        copyMenuItem.setText("Copy");
-        menuInserir.add(copyMenuItem);
-
-        pasteMenuItem.setText("Paste");
-        menuInserir.add(pasteMenuItem);
-
-        deleteMenuItem.setText("Delete");
-        menuInserir.add(deleteMenuItem);
-
         menuBar.add(menuInserir);
 
         GerarRecomendacao.setMnemonic('G');
@@ -149,6 +139,15 @@ public class TelaPrincipal extends javax.swing.JFrame {
         GerarRecomendacao.add(UsuarioNaoCadastrado);
 
         menuBar.add(GerarRecomendacao);
+
+        menuEstabelecimento.setMnemonic('e');
+        menuEstabelecimento.setText("Estabelecimento");
+
+        ListaPorPopularidade.setMnemonic('l');
+        ListaPorPopularidade.setText("Listar por Popularidade");
+        menuEstabelecimento.add(ListaPorPopularidade);
+
+        menuBar.add(menuEstabelecimento);
 
         menuAjuda.setMnemonic('A');
         menuAjuda.setText("Ajuda");
@@ -183,7 +182,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(desktop, javax.swing.GroupLayout.DEFAULT_SIZE, 397, Short.MAX_VALUE)
+            .addComponent(desktop, javax.swing.GroupLayout.DEFAULT_SIZE, 399, Short.MAX_VALUE)
         );
 
         pack();
@@ -230,7 +229,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_itemDeMenuSobreActionPerformed
 
     private void UsuarioCadastradoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UsuarioCadastradoActionPerformed
-        UsuarioCadastrado usucadas = new UsuarioCadastrado();
+        GUIUsuarioCadastrado usucadas = new GUIUsuarioCadastrado();
         desktop.add(usucadas);
         usucadas.setVisible(true);
     }//GEN-LAST:event_UsuarioCadastradoActionPerformed
@@ -241,7 +240,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_itemDeMenuOpinioesActionPerformed
 
     private void itemDeMenuUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itemDeMenuUsuarioActionPerformed
-       GUIUsuario GUIUsuario = new GUIUsuario();
+       GUIInserirUsuario GUIUsuario = new GUIInserirUsuario();
        desktop.add(GUIUsuario);
        GUIUsuario.setVisible(true);
     }//GEN-LAST:event_itemDeMenuUsuarioActionPerformed
@@ -255,11 +254,10 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenu GerarRecomendacao;
+    private javax.swing.JMenuItem ListaPorPopularidade;
     private javax.swing.JMenuItem UsuarioCadastrado;
     private javax.swing.JMenuItem UsuarioNaoCadastrado;
     private javax.swing.JMenuItem contentMenuItem;
-    private javax.swing.JMenuItem copyMenuItem;
-    private javax.swing.JMenuItem deleteMenuItem;
     private javax.swing.JDesktopPane desktop;
     private javax.swing.JMenuItem itemDeMenuEstabelecimentos;
     private javax.swing.JMenuItem itemDeMenuOpinioes;
@@ -270,8 +268,8 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private javax.swing.JMenu menuAjuda;
     private javax.swing.JMenuBar menuBar;
     private javax.swing.JMenu menuCarregar;
+    private javax.swing.JMenu menuEstabelecimento;
     private javax.swing.JMenu menuInserir;
-    private javax.swing.JMenuItem pasteMenuItem;
     // End of variables declaration//GEN-END:variables
     
     
