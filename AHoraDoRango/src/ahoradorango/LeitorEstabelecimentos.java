@@ -3,9 +3,9 @@ package ahoradorango;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.util.ArrayList;
-import java.util.Iterator;
 
-public class LeitorDeDados {
+
+public class LeitorEstabelecimentos {
 
 	public ArrayList<String> readFile(String filename, ArrayList<String> linhas)
 			throws Exception {
@@ -26,7 +26,7 @@ public class LeitorDeDados {
 		Estabelecimento estabelecimento;  
 		TipoDeAlmoco tipoAlmoco = null;
 		ArrayList<Estabelecimento> arrayEstabelecimentos = new ArrayList<Estabelecimento>();
-		LeitorDeDados leitor = new LeitorDeDados();
+		LeitorEstabelecimentos leitor = new LeitorEstabelecimentos();
 		leitor.readFile("lista_estabelecimentos.csv", linhas);
 
 		for (int i = 1; i < linhas.size(); i++) {
@@ -47,8 +47,7 @@ public class LeitorDeDados {
 				
 				estabelecimento = new Estabelecimento(campos[j], campos[j+1], tipoAlmoco);
 				arrayEstabelecimentos.add(estabelecimento);
-				
-				//TODO Jogar o nome, endereco e tipo de almoco de estabelecimento na tabela		
+						
 			}
 
 		}

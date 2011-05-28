@@ -15,11 +15,6 @@ import ahoradorango.Usuario;
 import excecoes.ListaDeEstabelecimentosInvalidaException;
 import excecoes.ListaDeUsuariosInvalidaException;
 import excecoes.NumeroDeRecomendacoesInvalidoException;
-//import excecoes.NomeInvalidoException;
-//import excecoes.EnderecoInvalidoException;
-//import excecoes.EstabelecimentoInvalidoException;
-//import excecoes.IndiceInvalidoDoEstabelecimentoNoPerfilException;
-
 
 public class TesteAlgoritmoDeRecomendacaoPopularidadeGlobal 
 {
@@ -274,7 +269,6 @@ public class TesteAlgoritmoDeRecomendacaoPopularidadeGlobal
 			System.err.println("Uma excecao inesperada de tipo ListaDeUsuariosInvalidaException foi lancada"
 					+ " ao passar ao metodo geraRecomendacao argumentos validos.");
 		}
-		
 	}
 
 }

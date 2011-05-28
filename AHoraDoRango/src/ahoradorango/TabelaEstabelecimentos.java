@@ -45,7 +45,7 @@ public class TabelaEstabelecimentos extends JPanel {
         /**
 		 * 
 		 */
-    	LeitorDeDados leitorDeDados;
+    	LeitorEstabelecimentos leitorDeDados;
 		private static final long serialVersionUID = 1L;
 		private String[] columnNames = {"Nome",
                                         "Endereco",
