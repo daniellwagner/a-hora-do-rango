@@ -7,28 +7,24 @@ package ahoradorango;
 
 import java.awt.Dimension;
 import java.awt.GridLayout;
+import javax.swing.JDesktopPane;
 import javax.swing.JFrame;
+import javax.swing.JInternalFrame;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.table.AbstractTableModel;
-import javax.swing.table.DefaultTableModel;
 
 /**
  *
  * @author Daniell
  */
 public class TabelaEstabelecimentos extends JPanel {
-    /**
-	 * 
-	 */
-	
-	private static final long serialVersionUID = 1L;
-	private boolean DEBUG = false;
+    private boolean DEBUG = false;
 
     public TabelaEstabelecimentos() {
         super(new GridLayout(1,0));
-        
+
         JTable table = new JTable(new MyTableModel());
         table.setPreferredScrollableViewportSize(new Dimension(500, 70));
         table.setFillsViewportHeight(true);
@@ -41,23 +37,23 @@ public class TabelaEstabelecimentos extends JPanel {
         add(scrollPane);
     }
 
-    public class MyTableModel extends AbstractTableModel {
-        /**
-		 * 
-		 */
-    	LeitorEstabelecimentos leitorDeDados;
-		private static final long serialVersionUID = 1L;
-		private String[] columnNames = {"Nome",
+    class MyTableModel extends AbstractTableModel {
+        private String[] columnNames = {"Nome",
                                         "Endereco",
                                         "Tipo de Almoco",
                                         };
-	
-		public Object[][] data={{}};
-		
-		DefaultTableModel modelo = new DefaultTableModel(data, columnNames);
-	
-				
-		
+        public Object[][] data = {
+	    {"Baixinho Bar e Restaurante", "Rua papa JoÃ£o XXIII, 101, Liberdade",
+	     "A la carte"},
+	    {"Bar do Cuscuz e Restaurante", "Rua Dr Severino Cruz, 771, Centro",
+	     "A la carte"},
+	    {"Bar do George", "Rua Almirante Barroso, Liberdade",
+	     "A la carte"},
+	    {"Bar do Santos", "Rua Silva Barbosa, em frente a Fofex (proximo a UFCG)",
+	     "Prato feito"},
+	    {"BodÃ£o Bar e Restaurante", " Rua OtÃ¡vio Amorim, 15, Cruzeiro",
+	     "A la carte"}
+        };
 
         @Override
         public int getColumnCount() {
@@ -169,7 +165,18 @@ public class TabelaEstabelecimentos extends JPanel {
         frame.pack();
         frame.setVisible(true);
         
-         
-        
+        /*
+        //Create and set up the content pane.
+        TabelaEstabelecimentos newContentPane = new TabelaEstabelecimentos();
+        newContentPane.setOpaque(true); //content panes must be opaque
+        frame.setContentPane(newContentPane);
+
+        //Display the window.
+        frame.pack();
+        frame.setVisible(true);
+         * 
+         */
     }
+
+
 }
