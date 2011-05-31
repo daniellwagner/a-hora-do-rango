@@ -9,6 +9,12 @@ import excecoes.NumeroDeRecomendacoesInvalidoException;
 
 public class AlgoritmoDeRecomendacaoPopularidadeGlobal
 {
+	/**
+	 * Retorna um mapa com o estabelecimento e a sua popularidade
+	 * @param estabelecimentos
+	 * @param usuarios
+	 * @return
+	 */
 	private static HashMap<Estabelecimento, Integer> determinaPopularidades(ArrayList<Estabelecimento> estabelecimentos,
 																			ArrayList<Usuario> usuarios)
 	{
@@ -29,7 +35,12 @@ public class AlgoritmoDeRecomendacaoPopularidadeGlobal
 		
 		return popularidades;
 	}
-	
+	/**
+	 * Retorna os estabelecimentos mais populares
+	 * @param quantidadeRecomendacoes
+	 * @param popularidades
+	 * @return
+	 */
 	private static ArrayList<Estabelecimento> determinaMaisPopulares(int quantidadeRecomendacoes, HashMap<Estabelecimento, Integer> popularidades)
 	{
 		ArrayList<Estabelecimento> maisPopulares = new ArrayList<Estabelecimento>();
@@ -56,6 +67,16 @@ public class AlgoritmoDeRecomendacaoPopularidadeGlobal
 		
 	}
 	
+	/**
+	 * Gera a recomendacao para o usuario
+	 * @param quantidadeRecomendacoes
+	 * @param estabelecimentos
+	 * @param usuarios
+	 * @return
+	 * @throws NumeroDeRecomendacoesInvalidoException
+	 * @throws ListaDeEstabelecimentosInvalidaException
+	 * @throws ListaDeUsuariosInvalidaException
+	 */
 	public static ArrayList<Estabelecimento> geraRecomendacao(int quantidadeRecomendacoes, 
 											ArrayList<Estabelecimento> estabelecimentos,
 											ArrayList<Usuario> usuarios) throws NumeroDeRecomendacoesInvalidoException, 

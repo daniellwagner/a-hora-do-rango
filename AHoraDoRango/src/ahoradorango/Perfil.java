@@ -3,6 +3,7 @@ package ahoradorango;
 import java.util.ArrayList;
 import java.util.GregorianCalendar;
 import java.util.HashMap;
+import java.util.Map;
 
 import excecoes.EstabelecimentoInvalidoException;
 import excecoes.ListaDeEstabelecimentosInvalidaException;
@@ -25,7 +26,7 @@ public class Perfil {
 	/**
 	 * Um mapeamento entre os estabelecimentos e as opinioes do usuario
 	 */
-	private HashMap<Estabelecimento, Integer> estabelecimentosOpinioes;
+	private Map<Estabelecimento, Integer> estabelecimentosOpinioes;
 	/**
 	 * O momento da criacao do perfil (data e hora)
 	 */
@@ -130,13 +131,24 @@ public class Perfil {
 
 		perfilAlteravel = Alteravel.NAO;
 	}
+	
+	public Perfil() {
+	}
+
+	public void setEstabelecimentosOpinioes(Map<Estabelecimento, Integer> estabelecimentosOpinioes) {
+		this.estabelecimentosOpinioes = estabelecimentosOpinioes;
+	}
+
+	public void setMomentoCriacaoDoPerfil(GregorianCalendar momentoCriacaoDoPerfil) {
+		this.momentoCriacaoDoPerfil = momentoCriacaoDoPerfil;
+	}
 
 	/**
 	 * Devolve o mapeamento entre estabelecimentos e opinioes
 	 * 
 	 * @return O mapeamento
 	 */
-	public HashMap<Estabelecimento, Integer> getEstabelecimentosOpinioes() {
+	public Map<Estabelecimento, Integer> getEstabelecimentosOpinioes() {
 		return estabelecimentosOpinioes;
 	}
 
@@ -217,8 +229,8 @@ public class Perfil {
 
 		if (!estabelecimentosOpinioes.containsKey(estabelecimento)) {
 			throw new EstabelecimentoInvalidoException(
-					"Estabelecimento nao contido na lista de estabelecimentos do perfil.",
-					estabelecimento);
+				"Estabelecimento nao contido na lista de estabelecimentos do perfil.",
+				estabelecimento);
 		}
 
 		if (novaOpiniao < MENOR_OPINIAO_POSSIVEL) {

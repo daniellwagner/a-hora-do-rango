@@ -11,6 +11,11 @@
 
 package ahoradorango;
 
+import java.util.Date;
+import java.util.GregorianCalendar;
+
+import javax.swing.JComboBox;
+
 /**
  *
  * @author Daniell
@@ -21,9 +26,16 @@ public class GUICadastrarUsuario extends javax.swing.JInternalFrame {
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
+	private String novoPerfil;
+	private String usuarioDigitado;
+	private String[] opinioes = new String[39];
+	private LeitorOpinioes leitorOpinioes;
+	private GregorianCalendar cal;
 	/** Creates new form GUICadastrarUsuario */
-    public GUICadastrarUsuario() {
+    public GUICadastrarUsuario(LeitorOpinioes leitorOpinioes, GregorianCalendar cal) {
         initComponents();
+        this.leitorOpinioes = leitorOpinioes;
+        this.cal = cal;
     }
 
     /** This method is called from within the constructor to
@@ -127,173 +139,1741 @@ public class GUICadastrarUsuario extends javax.swing.JInternalFrame {
         jTextField1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField1ActionPerformed(evt);
+                
+                
             }
         });
 
         jLabel2.setText("Bar do Cuscuz e Restaurante:");
+        
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "-5", "-4", "-3", "-2", "-1", "0", "1", "2", "3", "4", "5" }));
+        jComboBox1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JComboBox combo = (JComboBox)evt.getSource(); 
+            	jComboBox1ActionPerformed(evt);
+                if (combo.getSelectedItem().equals("-5")){
+                	opinioes[0] = "-5: Detesto";
+                }
+                if (combo.getSelectedItem().equals("-4")){
+                	opinioes[0] = "-4: Acho muito ruim";
+                }
+                if (combo.getSelectedItem().equals("-3")){
+                	opinioes[0] = "-3: Acho bastante ruim";
+                }
+                if (combo.getSelectedItem().equals("-2")){
+                	opinioes[0] = "-2: Acho ruim";
+                }
+                if (combo.getSelectedItem().equals("-1")){
+                	opinioes[0] = "-1: Acho um pouco ruim";
+                }
+                if (combo.getSelectedItem().equals("0")){
+                	opinioes[0] = "0 : Não conheço";
+                }
+                if (combo.getSelectedItem().equals("1")){
+                	opinioes[0] = "1 : Não é ruim";
+                }
+                if (combo.getSelectedItem().equals("2")){
+                	opinioes[0] = "2 : É bonzinho";
+                }
+                if (combo.getSelectedItem().equals("3")){
+                	opinioes[0] = "3: Bastante bom";
+                }
+                if (combo.getSelectedItem().equals("4")){
+                	opinioes[0] = "4: Muito bom";
+                }
+                if (combo.getSelectedItem().equals("5")){
+                	opinioes[0] = "5: Incrível. sensacional. impressionante";
+                }
+            }
+        });
 
         jLabel3.setText("Baixinho Bar e Restaurante:");
 
-        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "-5", "-4", "-3", "-2", "-1", "0", "1", "2", "3", "4", "5" }));
+        jComboBox2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JComboBox combo = (JComboBox)evt.getSource(); 
+            	jComboBox2ActionPerformed(evt);
+                if (combo.getSelectedItem().equals("-5")){
+                	opinioes[1] = "-5: Detesto";
+                }
+                if (combo.getSelectedItem().equals("-4")){
+                	opinioes[1] = "-4: Acho muito ruim";
+                }
+                if (combo.getSelectedItem().equals("-3")){
+                	opinioes[1] = "-3: Acho bastante ruim";
+                }
+                if (combo.getSelectedItem().equals("-2")){
+                	opinioes[1] = "-2: Acho ruim";
+                }
+                if (combo.getSelectedItem().equals("-1")){
+                	opinioes[1] = "-1: Acho um pouco ruim";
+                }
+                if (combo.getSelectedItem().equals("0")){
+                	opinioes[1] = "0 : Não conheço";
+                }
+                if (combo.getSelectedItem().equals("1")){
+                	opinioes[1] = "1 : Não é ruim";
+                }
+                if (combo.getSelectedItem().equals("2")){
+                	opinioes[1] = "2 : É bonzinho";
+                }
+                if (combo.getSelectedItem().equals("3")){
+                	opinioes[1] = "3: Bastante bom";
+                }
+                if (combo.getSelectedItem().equals("4")){
+                	opinioes[1] = "4: Muito bom";
+                }
+                if (combo.getSelectedItem().equals("5")){
+                	opinioes[1] = "5: Incrível. sensacional. impressionante";
+                }
+            }
+        });
+
 
         jLabel4.setText("Bar do George:");
 
-        jComboBox3.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jComboBox3.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "-5", "-4", "-3", "-2", "-1", "0", "1", "2", "3", "4", "5" }));
+        jComboBox3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JComboBox combo = (JComboBox)evt.getSource(); 
+            	jComboBox3ActionPerformed(evt);
+                if (combo.getSelectedItem().equals("-5")){
+                	opinioes[2] = "-5: Detesto";
+                }
+                if (combo.getSelectedItem().equals("-4")){
+                	opinioes[2] = "-4: Acho muito ruim";
+                }
+                if (combo.getSelectedItem().equals("-3")){
+                	opinioes[2] = "-3: Acho bastante ruim";
+                }
+                if (combo.getSelectedItem().equals("-2")){
+                	opinioes[2] = "-2: Acho ruim";
+                }
+                if (combo.getSelectedItem().equals("-1")){
+                	opinioes[2] = "-1: Acho um pouco ruim";
+                }
+                if (combo.getSelectedItem().equals("0")){
+                	opinioes[2] = "0 : Não conheço";
+                }
+                if (combo.getSelectedItem().equals("1")){
+                	opinioes[2] = "1 : Não é ruim";
+                }
+                if (combo.getSelectedItem().equals("2")){
+                	opinioes[2] = "2 : É bonzinho";
+                }
+                if (combo.getSelectedItem().equals("3")){
+                	opinioes[2] = "3: Bastante bom";
+                }
+                if (combo.getSelectedItem().equals("4")){
+                	opinioes[2] = "4: Muito bom";
+                }
+                if (combo.getSelectedItem().equals("5")){
+                	opinioes[2] = "5: Incrível. sensacional. impressionante";
+                }
+            }
+        });
+
 
         jLabel5.setText("Bar do Santos:");
 
-        jComboBox4.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jComboBox4.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "-5", "-4", "-3", "-2", "-1", "0", "1", "2", "3", "4", "5" }));
+        jComboBox4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JComboBox combo = (JComboBox)evt.getSource(); 
+            	jComboBox4ActionPerformed(evt);
+                if (combo.getSelectedItem().equals("-5")){
+                	opinioes[3] = "-5: Detesto";
+                }
+                if (combo.getSelectedItem().equals("-4")){
+                	opinioes[3] = "-4: Acho muito ruim";
+                }
+                if (combo.getSelectedItem().equals("-3")){
+                	opinioes[3] = "-3: Acho bastante ruim";
+                }
+                if (combo.getSelectedItem().equals("-2")){
+                	opinioes[3] = "-2: Acho ruim";
+                }
+                if (combo.getSelectedItem().equals("-1")){
+                	opinioes[3] = "-1: Acho um pouco ruim";
+                }
+                if (combo.getSelectedItem().equals("0")){
+                	opinioes[3] = "0 : Não conheço";
+                }
+                if (combo.getSelectedItem().equals("1")){
+                	opinioes[3] = "1 : Não é ruim";
+                }
+                if (combo.getSelectedItem().equals("2")){
+                	opinioes[3] = "2 : É bonzinho";
+                }
+                if (combo.getSelectedItem().equals("3")){
+                	opinioes[3] = "3: Bastante bom";
+                }
+                if (combo.getSelectedItem().equals("4")){
+                	opinioes[3] = "4: Muito bom";
+                }
+                if (combo.getSelectedItem().equals("5")){
+                	opinioes[3] = "5: Incrível. sensacional. impressionante";
+                }
+            }
+        });
+
 
         jLabel6.setText("Bodao Bar e Restaurante:");
 
-        jComboBox5.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jComboBox5.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "-5", "-4", "-3", "-2", "-1", "0", "1", "2", "3", "4", "5" }));
+        jComboBox5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JComboBox combo = (JComboBox)evt.getSource(); 
+            	jComboBox5ActionPerformed(evt);
+                if (combo.getSelectedItem().equals("-5")){
+                	opinioes[4] = "-5: Detesto";
+                }
+                if (combo.getSelectedItem().equals("-4")){
+                	opinioes[4] = "-4: Acho muito ruim";
+                }
+                if (combo.getSelectedItem().equals("-3")){
+                	opinioes[4] = "-3: Acho bastante ruim";
+                }
+                if (combo.getSelectedItem().equals("-2")){
+                	opinioes[4] = "-2: Acho ruim";
+                }
+                if (combo.getSelectedItem().equals("-1")){
+                	opinioes[4] = "-1: Acho um pouco ruim";
+                }
+                if (combo.getSelectedItem().equals("0")){
+                	opinioes[4] = "0 : Não conheço";
+                }
+                if (combo.getSelectedItem().equals("1")){
+                	opinioes[4] = "1 : Não é ruim";
+                }
+                if (combo.getSelectedItem().equals("2")){
+                	opinioes[4] = "2 : É bonzinho";
+                }
+                if (combo.getSelectedItem().equals("3")){
+                	opinioes[4] = "3: Bastante bom";
+                }
+                if (combo.getSelectedItem().equals("4")){
+                	opinioes[4] = "4: Muito bom";
+                }
+                if (combo.getSelectedItem().equals("5")){
+                	opinioes[4] = "5: Incrível. sensacional. impressionante";
+                }
+            }
+        });
+
 
         jLabel7.setText("Bonaparte:");
 
-        jComboBox6.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jComboBox6.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "-5", "-4", "-3", "-2", "-1", "0", "1", "2", "3", "4", "5" }));
+        jComboBox6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JComboBox combo = (JComboBox)evt.getSource(); 
+            	jComboBox6ActionPerformed(evt);
+                if (combo.getSelectedItem().equals("-5")){
+                	opinioes[5] = "-5: Detesto";
+                }
+                if (combo.getSelectedItem().equals("-4")){
+                	opinioes[5] = "-4: Acho muito ruim";
+                }
+                if (combo.getSelectedItem().equals("-3")){
+                	opinioes[5] = "-3: Acho bastante ruim";
+                }
+                if (combo.getSelectedItem().equals("-2")){
+                	opinioes[5] = "-2: Acho ruim";
+                }
+                if (combo.getSelectedItem().equals("-1")){
+                	opinioes[5] = "-1: Acho um pouco ruim";
+                }
+                if (combo.getSelectedItem().equals("0")){
+                	opinioes[5] = "0 : Não conheço";
+                }
+                if (combo.getSelectedItem().equals("1")){
+                	opinioes[5] = "1 : Não é ruim";
+                }
+                if (combo.getSelectedItem().equals("2")){
+                	opinioes[5] = "2 : É bonzinho";
+                }
+                if (combo.getSelectedItem().equals("3")){
+                	opinioes[5] = "3: Bastante bom";
+                }
+                if (combo.getSelectedItem().equals("4")){
+                	opinioes[5] = "4: Muito bom";
+                }
+                if (combo.getSelectedItem().equals("5")){
+                	opinioes[5] = "5: Incrível. sensacional. impressionante";
+                }
+            }
+        });
 
-        jButton1.setText("Inserir");
 
+        jButton1.setText("Cadastrar");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+                if(evt.getSource() == jButton1){
+                	usuarioDigitado = jTextField1.getText();
+                	String stringOpinioes = "";
+                	for (int i = 0; i <opinioes.length; i++){
+                		stringOpinioes = stringOpinioes + opinioes[i] + ";";
+                	}
+                	novoPerfil = leitorOpinioes.getDataHoraString(new GregorianCalendar()) +"   " + usuarioDigitado +"  " + stringOpinioes;
+                    System.out.println(novoPerfil);
+                }
+                
+                
+            }
+        });
+        
         jButton2.setText("Cancelar");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
+                GUICadastrarUsuario.this.dispose();
             }
         });
 
         jLabel8.setText("Bongustaio:");
 
-        jComboBox7.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jComboBox7.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "-5", "-4", "-3", "-2", "-1", "0", "1", "2", "3", "4", "5" }));
+        jComboBox7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JComboBox combo = (JComboBox)evt.getSource(); 
+            	jComboBox7ActionPerformed(evt);
+                if (combo.getSelectedItem().equals("-5")){
+                	opinioes[6] = "-5: Detesto";
+                }
+                if (combo.getSelectedItem().equals("-4")){
+                	opinioes[6] = "-4: Acho muito ruim";
+                }
+                if (combo.getSelectedItem().equals("-3")){
+                	opinioes[6] = "-3: Acho bastante ruim";
+                }
+                if (combo.getSelectedItem().equals("-2")){
+                	opinioes[6] = "-2: Acho ruim";
+                }
+                if (combo.getSelectedItem().equals("-1")){
+                	opinioes[6] = "-1: Acho um pouco ruim";
+                }
+                if (combo.getSelectedItem().equals("0")){
+                	opinioes[6] = "0 : Não conheço";
+                }
+                if (combo.getSelectedItem().equals("1")){
+                	opinioes[6] = "1 : Não é ruim";
+                }
+                if (combo.getSelectedItem().equals("2")){
+                	opinioes[6] = "2 : É bonzinho";
+                }
+                if (combo.getSelectedItem().equals("3")){
+                	opinioes[6] = "3: Bastante bom";
+                }
+                if (combo.getSelectedItem().equals("4")){
+                	opinioes[6] = "4: Muito bom";
+                }
+                if (combo.getSelectedItem().equals("5")){
+                	opinioes[6] = "5: Incrível. sensacional. impressionante";
+                }
+            }
+        });
 
-        jLabel9.setText("Cabana do PossidÃ´nio:");
 
-        jComboBox8.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jLabel9.setText("Cabana do Possidonio:");
+
+        jComboBox8.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "-5", "-4", "-3", "-2", "-1", "0", "1", "2", "3", "4", "5" }));
+        jComboBox8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JComboBox combo = (JComboBox)evt.getSource(); 
+            	jComboBox8ActionPerformed(evt);
+                if (combo.getSelectedItem().equals("-5")){
+                	opinioes[7] = "-5: Detesto";
+                }
+                if (combo.getSelectedItem().equals("-4")){
+                	opinioes[7] = "-4: Acho muito ruim";
+                }
+                if (combo.getSelectedItem().equals("-3")){
+                	opinioes[7] = "-3: Acho bastante ruim";
+                }
+                if (combo.getSelectedItem().equals("-2")){
+                	opinioes[7] = "-2: Acho ruim";
+                }
+                if (combo.getSelectedItem().equals("-1")){
+                	opinioes[7] = "-1: Acho um pouco ruim";
+                }
+                if (combo.getSelectedItem().equals("0")){
+                	opinioes[7] = "0 : Não conheço";
+                }
+                if (combo.getSelectedItem().equals("1")){
+                	opinioes[7] = "1 : Não é ruim";
+                }
+                if (combo.getSelectedItem().equals("2")){
+                	opinioes[7] = "2 : É bonzinho";
+                }
+                if (combo.getSelectedItem().equals("3")){
+                	opinioes[7] = "3: Bastante bom";
+                }
+                if (combo.getSelectedItem().equals("4")){
+                	opinioes[7] = "4: Muito bom";
+                }
+                if (combo.getSelectedItem().equals("5")){
+                	opinioes[7] = "5: Incrível. sensacional. impressionante";
+                }
+            }
+        });
 
         jLabel10.setText("Cantina da Sayonara:");
 
-        jComboBox9.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jComboBox9.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "-5", "-4", "-3", "-2", "-1", "0", "1", "2", "3", "4", "5" }));
+        jComboBox9.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JComboBox combo = (JComboBox)evt.getSource(); 
+            	jComboBox9ActionPerformed(evt);
+                if (combo.getSelectedItem().equals("-5")){
+                	opinioes[8] = "-5: Detesto";
+                }
+                if (combo.getSelectedItem().equals("-4")){
+                	opinioes[8] = "-4: Acho muito ruim";
+                }
+                if (combo.getSelectedItem().equals("-3")){
+                	opinioes[8] = "-3: Acho bastante ruim";
+                }
+                if (combo.getSelectedItem().equals("-2")){
+                	opinioes[8] = "-2: Acho ruim";
+                }
+                if (combo.getSelectedItem().equals("-1")){
+                	opinioes[8] = "-1: Acho um pouco ruim";
+                }
+                if (combo.getSelectedItem().equals("0")){
+                	opinioes[8] = "0 : Não conheço";
+                }
+                if (combo.getSelectedItem().equals("1")){
+                	opinioes[8] = "1 : Não é ruim";
+                }
+                if (combo.getSelectedItem().equals("2")){
+                	opinioes[8] = "2 : É bonzinho";
+                }
+                if (combo.getSelectedItem().equals("3")){
+                	opinioes[8] = "3: Bastante bom";
+                }
+                if (combo.getSelectedItem().equals("4")){
+                	opinioes[8] = "4: Muito bom";
+                }
+                if (combo.getSelectedItem().equals("5")){
+                	opinioes[8] = "5: Incrível. sensacional. impressionante";
+                }
+            }
+        });
 
-        jLabel11.setText("Cantina de Dona InÃªs:");
+        jLabel11.setText("Cantina de Dona Ines:");
 
-        jComboBox10.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jComboBox10.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "-5", "-4", "-3", "-2", "-1", "0", "1", "2", "3", "4", "5" }));
+        jComboBox10.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JComboBox combo = (JComboBox)evt.getSource(); 
+            	jComboBox10ActionPerformed(evt);
+                if (combo.getSelectedItem().equals("-5")){
+                	opinioes[9] = "-5: Detesto";
+                }
+                if (combo.getSelectedItem().equals("-4")){
+                	opinioes[9] = "-4: Acho muito ruim";
+                }
+                if (combo.getSelectedItem().equals("-3")){
+                	opinioes[9] = "-3: Acho bastante ruim";
+                }
+                if (combo.getSelectedItem().equals("-2")){
+                	opinioes[9] = "-2: Acho ruim";
+                }
+                if (combo.getSelectedItem().equals("-1")){
+                	opinioes[9] = "-1: Acho um pouco ruim";
+                }
+                if (combo.getSelectedItem().equals("0")){
+                	opinioes[9] = "0 : Não conheço";
+                }
+                if (combo.getSelectedItem().equals("1")){
+                	opinioes[9] = "1 : Não é ruim";
+                }
+                if (combo.getSelectedItem().equals("2")){
+                	opinioes[9] = "2 : É bonzinho";
+                }
+                if (combo.getSelectedItem().equals("3")){
+                	opinioes[9] = "3: Bastante bom";
+                }
+                if (combo.getSelectedItem().equals("4")){
+                	opinioes[9] = "4: Muito bom";
+                }
+                if (combo.getSelectedItem().equals("5")){
+                	opinioes[9] = "5: Incrível. sensacional. impressionante";
+                }
+            }
+        });
 
         jLabel12.setText("Cantina de Olavo:");
 
-        jComboBox11.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jComboBox11.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "-5", "-4", "-3", "-2", "-1", "0", "1", "2", "3", "4", "5" }));
+        jComboBox11.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JComboBox combo = (JComboBox)evt.getSource(); 
+            	jComboBox11ActionPerformed(evt);
+                if (combo.getSelectedItem().equals("-5")){
+                	opinioes[10] = "-5: Detesto";
+                }
+                if (combo.getSelectedItem().equals("-4")){
+                	opinioes[10] = "-4: Acho muito ruim";
+                }
+                if (combo.getSelectedItem().equals("-3")){
+                	opinioes[10] = "-3: Acho bastante ruim";
+                }
+                if (combo.getSelectedItem().equals("-2")){
+                	opinioes[10] = "-2: Acho ruim";
+                }
+                if (combo.getSelectedItem().equals("-1")){
+                	opinioes[10] = "-1: Acho um pouco ruim";
+                }
+                if (combo.getSelectedItem().equals("0")){
+                	opinioes[10] = "0 : Não conheço";
+                }
+                if (combo.getSelectedItem().equals("1")){
+                	opinioes[10] = "1 : Não é ruim";
+                }
+                if (combo.getSelectedItem().equals("2")){
+                	opinioes[10] = "2 : É bonzinho";
+                }
+                if (combo.getSelectedItem().equals("3")){
+                	opinioes[10] = "3: Bastante bom";
+                }
+                if (combo.getSelectedItem().equals("4")){
+                	opinioes[10] = "4: Muito bom";
+                }
+                if (combo.getSelectedItem().equals("5")){
+                	opinioes[10] = "5: Incrível. sensacional. impressionante";
+                }
+            }
+        });
+
 
         jLabel13.setText("Cantina do Departamento de Meteorologia:");
 
-        jComboBox12.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jComboBox12.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "-5", "-4", "-3", "-2", "-1", "0", "1", "2", "3", "4", "5" }));
+        jComboBox12.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JComboBox combo = (JComboBox)evt.getSource(); 
+            	jComboBox12ActionPerformed(evt);
+                if (combo.getSelectedItem().equals("-5")){
+                	opinioes[11] = "-5: Detesto";
+                }
+                if (combo.getSelectedItem().equals("-4")){
+                	opinioes[11] = "-4: Acho muito ruim";
+                }
+                if (combo.getSelectedItem().equals("-3")){
+                	opinioes[11] = "-3: Acho bastante ruim";
+                }
+                if (combo.getSelectedItem().equals("-2")){
+                	opinioes[11] = "-2: Acho ruim";
+                }
+                if (combo.getSelectedItem().equals("-1")){
+                	opinioes[11] = "-1: Acho um pouco ruim";
+                }
+                if (combo.getSelectedItem().equals("0")){
+                	opinioes[11] = "0 : Não conheço";
+                }
+                if (combo.getSelectedItem().equals("1")){
+                	opinioes[11] = "1 : Não é ruim";
+                }
+                if (combo.getSelectedItem().equals("2")){
+                	opinioes[11] = "2 : É bonzinho";
+                }
+                if (combo.getSelectedItem().equals("3")){
+                	opinioes[11] = "3: Bastante bom";
+                }
+                if (combo.getSelectedItem().equals("4")){
+                	opinioes[11] = "4: Muito bom";
+                }
+                if (combo.getSelectedItem().equals("5")){
+                	opinioes[11] = "5: Incrível. sensacional. impressionante";
+                }
+            }
+        });
+
 
         jLabel14.setText("Cantina do Hall das Placas:");
 
-        jComboBox13.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jComboBox13.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "-5", "-4", "-3", "-2", "-1", "0", "1", "2", "3", "4", "5" }));
+        jComboBox13.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JComboBox combo = (JComboBox)evt.getSource(); 
+            	jComboBox13ActionPerformed(evt);
+                if (combo.getSelectedItem().equals("-5")){
+                	opinioes[12] = "-5: Detesto";
+                }
+                if (combo.getSelectedItem().equals("-4")){
+                	opinioes[12] = "-4: Acho muito ruim";
+                }
+                if (combo.getSelectedItem().equals("-3")){
+                	opinioes[12] = "-3: Acho bastante ruim";
+                }
+                if (combo.getSelectedItem().equals("-2")){
+                	opinioes[12] = "-2: Acho ruim";
+                }
+                if (combo.getSelectedItem().equals("-1")){
+                	opinioes[12] = "-1: Acho um pouco ruim";
+                }
+                if (combo.getSelectedItem().equals("0")){
+                	opinioes[12] = "0 : Não conheço";
+                }
+                if (combo.getSelectedItem().equals("1")){
+                	opinioes[12] = "1 : Não é ruim";
+                }
+                if (combo.getSelectedItem().equals("2")){
+                	opinioes[12] = "2 : É bonzinho";
+                }
+                if (combo.getSelectedItem().equals("3")){
+                	opinioes[12] = "3: Bastante bom";
+                }
+                if (combo.getSelectedItem().equals("4")){
+                	opinioes[12] = "4: Muito bom";
+                }
+                if (combo.getSelectedItem().equals("5")){
+                	opinioes[12] = "5: Incrível. sensacional. impressionante";
+                }
+            }
+        });
 
-        jLabel15.setText("Cantinho UniversitÃ¡rio:");
 
-        jComboBox14.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jLabel15.setText("Cantinho Universitario:");
+
+        jComboBox14.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "-5", "-4", "-3", "-2", "-1", "0", "1", "2", "3", "4", "5" }));
+        jComboBox14.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JComboBox combo = (JComboBox)evt.getSource(); 
+            	jComboBox14ActionPerformed(evt);
+                if (combo.getSelectedItem().equals("-5")){
+                	opinioes[13] = "-5: Detesto";
+                }
+                if (combo.getSelectedItem().equals("-4")){
+                	opinioes[13] = "-4: Acho muito ruim";
+                }
+                if (combo.getSelectedItem().equals("-3")){
+                	opinioes[13] = "-3: Acho bastante ruim";
+                }
+                if (combo.getSelectedItem().equals("-2")){
+                	opinioes[13] = "-2: Acho ruim";
+                }
+                if (combo.getSelectedItem().equals("-1")){
+                	opinioes[13] = "-1: Acho um pouco ruim";
+                }
+                if (combo.getSelectedItem().equals("0")){
+                	opinioes[13] = "0 : Não conheço";
+                }
+                if (combo.getSelectedItem().equals("1")){
+                	opinioes[13] = "1 : Não é ruim";
+                }
+                if (combo.getSelectedItem().equals("2")){
+                	opinioes[13] = "2 : É bonzinho";
+                }
+                if (combo.getSelectedItem().equals("3")){
+                	opinioes[13] = "3: Bastante bom";
+                }
+                if (combo.getSelectedItem().equals("4")){
+                	opinioes[13] = "4: Muito bom";
+                }
+                if (combo.getSelectedItem().equals("5")){
+                	opinioes[13] = "5: Incrível. sensacional. impressionante";
+                }
+            }
+        });
+
 
         jLabel16.setText("Chinatown:");
 
-        jComboBox15.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jComboBox15.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "-5", "-4", "-3", "-2", "-1", "0", "1", "2", "3", "4", "5" }));
+        jComboBox15.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JComboBox combo = (JComboBox)evt.getSource(); 
+            	jComboBox15ActionPerformed(evt);
+                if (combo.getSelectedItem().equals("-5")){
+                	opinioes[14] = "-5: Detesto";
+                }
+                if (combo.getSelectedItem().equals("-4")){
+                	opinioes[14] = "-4: Acho muito ruim";
+                }
+                if (combo.getSelectedItem().equals("-3")){
+                	opinioes[14] = "-3: Acho bastante ruim";
+                }
+                if (combo.getSelectedItem().equals("-2")){
+                	opinioes[14] = "-2: Acho ruim";
+                }
+                if (combo.getSelectedItem().equals("-1")){
+                	opinioes[14] = "-1: Acho um pouco ruim";
+                }
+                if (combo.getSelectedItem().equals("0")){
+                	opinioes[14] = "0 : Não conheço";
+                }
+                if (combo.getSelectedItem().equals("1")){
+                	opinioes[14] = "1 : Não é ruim";
+                }
+                if (combo.getSelectedItem().equals("2")){
+                	opinioes[14] = "2 : É bonzinho";
+                }
+                if (combo.getSelectedItem().equals("3")){
+                	opinioes[14] = "3: Bastante bom";
+                }
+                if (combo.getSelectedItem().equals("4")){
+                	opinioes[14] = "4: Muito bom";
+                }
+                if (combo.getSelectedItem().equals("5")){
+                	opinioes[14] = "5: Incrível. sensacional. impressionante";
+                }
+            }
+        });
 
-        jLabel17.setText("Divino FogÃ£o:");
+        
+        jLabel17.setText("Divino Fogao:");
 
-        jComboBox16.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jComboBox16.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "-5", "-4", "-3", "-2", "-1", "0", "1", "2", "3", "4", "5" }));
+        jComboBox16.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JComboBox combo = (JComboBox)evt.getSource(); 
+            	jComboBox16ActionPerformed(evt);
+                if (combo.getSelectedItem().equals("-5")){
+                	opinioes[15] = "-5: Detesto";
+                }
+                if (combo.getSelectedItem().equals("-4")){
+                	opinioes[15] = "-4: Acho muito ruim";
+                }
+                if (combo.getSelectedItem().equals("-3")){
+                	opinioes[15] = "-3: Acho bastante ruim";
+                }
+                if (combo.getSelectedItem().equals("-2")){
+                	opinioes[15] = "-2: Acho ruim";
+                }
+                if (combo.getSelectedItem().equals("-1")){
+                	opinioes[15] = "-1: Acho um pouco ruim";
+                }
+                if (combo.getSelectedItem().equals("0")){
+                	opinioes[15] = "0 : Não conheço";
+                }
+                if (combo.getSelectedItem().equals("1")){
+                	opinioes[15] = "1 : Não é ruim";
+                }
+                if (combo.getSelectedItem().equals("2")){
+                	opinioes[15] = "2 : É bonzinho";
+                }
+                if (combo.getSelectedItem().equals("3")){
+                	opinioes[15] = "3: Bastante bom";
+                }
+                if (combo.getSelectedItem().equals("4")){
+                	opinioes[15] = "4: Muito bom";
+                }
+                if (combo.getSelectedItem().equals("5")){
+                	opinioes[15] = "5: Incrível. sensacional. impressionante";
+                }
+            }
+        });
+
 
         jLabel18.setText("Fazenda:");
 
-        jComboBox17.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jComboBox17.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "-5", "-4", "-3", "-2", "-1", "0", "1", "2", "3", "4", "5" }));
+        jComboBox17.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JComboBox combo = (JComboBox)evt.getSource(); 
+            	jComboBox17ActionPerformed(evt);
+                if (combo.getSelectedItem().equals("-5")){
+                	opinioes[16] = "-5: Detesto";
+                }
+                if (combo.getSelectedItem().equals("-4")){
+                	opinioes[16] = "-4: Acho muito ruim";
+                }
+                if (combo.getSelectedItem().equals("-3")){
+                	opinioes[16] = "-3: Acho bastante ruim";
+                }
+                if (combo.getSelectedItem().equals("-2")){
+                	opinioes[16] = "-2: Acho ruim";
+                }
+                if (combo.getSelectedItem().equals("-1")){
+                	opinioes[16] = "-1: Acho um pouco ruim";
+                }
+                if (combo.getSelectedItem().equals("0")){
+                	opinioes[16] = "0 : Não conheço";
+                }
+                if (combo.getSelectedItem().equals("1")){
+                	opinioes[16] = "1 : Não é ruim";
+                }
+                if (combo.getSelectedItem().equals("2")){
+                	opinioes[16] = "2 : É bonzinho";
+                }
+                if (combo.getSelectedItem().equals("3")){
+                	opinioes[16] = "3: Bastante bom";
+                }
+                if (combo.getSelectedItem().equals("4")){
+                	opinioes[16] = "4: Muito bom";
+                }
+                if (combo.getSelectedItem().equals("5")){
+                	opinioes[16] = "5: Incrível. sensacional. impressionante";
+                }
+            }
+        });
+
 
         jLabel19.setText("Giraffas:");
 
-        jComboBox18.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jComboBox18.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "-5", "-4", "-3", "-2", "-1", "0", "1", "2", "3", "4", "5" }));
+        jComboBox18.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JComboBox combo = (JComboBox)evt.getSource(); 
+            	jComboBox18ActionPerformed(evt);
+                if (combo.getSelectedItem().equals("-5")){
+                	opinioes[17] = "-5: Detesto";
+                }
+                if (combo.getSelectedItem().equals("-4")){
+                	opinioes[17] = "-4: Acho muito ruim";
+                }
+                if (combo.getSelectedItem().equals("-3")){
+                	opinioes[17] = "-3: Acho bastante ruim";
+                }
+                if (combo.getSelectedItem().equals("-2")){
+                	opinioes[17] = "-2: Acho ruim";
+                }
+                if (combo.getSelectedItem().equals("-1")){
+                	opinioes[17] = "-1: Acho um pouco ruim";
+                }
+                if (combo.getSelectedItem().equals("0")){
+                	opinioes[17] = "0 : Não conheço";
+                }
+                if (combo.getSelectedItem().equals("1")){
+                	opinioes[17] = "1 : Não é ruim";
+                }
+                if (combo.getSelectedItem().equals("2")){
+                	opinioes[17] = "2 : É bonzinho";
+                }
+                if (combo.getSelectedItem().equals("3")){
+                	opinioes[17] = "3: Bastante bom";
+                }
+                if (combo.getSelectedItem().equals("4")){
+                	opinioes[17] = "4: Muito bom";
+                }
+                if (combo.getSelectedItem().equals("5")){
+                	opinioes[17] = "5: Incrível. sensacional. impressionante";
+                }
+            }
+        });
+
 
         jLabel20.setText("Girassol:");
 
-        jComboBox19.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jComboBox19.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "-5", "-4", "-3", "-2", "-1", "0", "1", "2", "3", "4", "5" }));
+        jComboBox19.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JComboBox combo = (JComboBox)evt.getSource(); 
+            	jComboBox19ActionPerformed(evt);
+                if (combo.getSelectedItem().equals("-5")){
+                	opinioes[18] = "-5: Detesto";
+                }
+                if (combo.getSelectedItem().equals("-4")){
+                	opinioes[18] = "-4: Acho muito ruim";
+                }
+                if (combo.getSelectedItem().equals("-3")){
+                	opinioes[18] = "-3: Acho bastante ruim";
+                }
+                if (combo.getSelectedItem().equals("-2")){
+                	opinioes[18] = "-2: Acho ruim";
+                }
+                if (combo.getSelectedItem().equals("-1")){
+                	opinioes[18] = "-1: Acho um pouco ruim";
+                }
+                if (combo.getSelectedItem().equals("0")){
+                	opinioes[18] = "0 : Não conheço";
+                }
+                if (combo.getSelectedItem().equals("1")){
+                	opinioes[18] = "1 : Não é ruim";
+                }
+                if (combo.getSelectedItem().equals("2")){
+                	opinioes[18] = "2 : É bonzinho";
+                }
+                if (combo.getSelectedItem().equals("3")){
+                	opinioes[18] = "3: Bastante bom";
+                }
+                if (combo.getSelectedItem().equals("4")){
+                	opinioes[18] = "4: Muito bom";
+                }
+                if (combo.getSelectedItem().equals("5")){
+                	opinioes[18] = "5: Incrível. sensacional. impressionante";
+                }
+            }
+        });
+
 
         jLabel21.setText("Gulas:");
 
         jLabel22.setText("Manoel da Carne de Sol:");
 
-        jComboBox21.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jComboBox21.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "-5", "-4", "-3", "-2", "-1", "0", "1", "2", "3", "4", "5" }));
+        jComboBox21.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JComboBox combo = (JComboBox)evt.getSource(); 
+            	jComboBox21ActionPerformed(evt);
+                if (combo.getSelectedItem().equals("-5")){
+                	opinioes[20] = "-5: Detesto";
+                }
+                if (combo.getSelectedItem().equals("-4")){
+                	opinioes[20] = "-4: Acho muito ruim";
+                }
+                if (combo.getSelectedItem().equals("-3")){
+                	opinioes[20] = "-3: Acho bastante ruim";
+                }
+                if (combo.getSelectedItem().equals("-2")){
+                	opinioes[20] = "-2: Acho ruim";
+                }
+                if (combo.getSelectedItem().equals("-1")){
+                	opinioes[20] = "-1: Acho um pouco ruim";
+                }
+                if (combo.getSelectedItem().equals("0")){
+                	opinioes[20] = "0 : Não conheço";
+                }
+                if (combo.getSelectedItem().equals("1")){
+                	opinioes[20] = "1 : Não é ruim";
+                }
+                if (combo.getSelectedItem().equals("2")){
+                	opinioes[20] = "2 : É bonzinho";
+                }
+                if (combo.getSelectedItem().equals("3")){
+                	opinioes[20] = "3: Bastante bom";
+                }
+                if (combo.getSelectedItem().equals("4")){
+                	opinioes[20] = "4: Muito bom";
+                }
+                if (combo.getSelectedItem().equals("5")){
+                	opinioes[20] = "5: Incrível. sensacional. impressionante";
+                }
+            }
+        });
 
-        jLabel23.setText("Marmitaria ArtCulinÃ¡ria:");
 
-        jComboBox22.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jLabel23.setText("Marmitaria ArtCulinaria:");
 
-        jComboBox23.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jComboBox22.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "-5", "-4", "-3", "-2", "-1", "0", "1", "2", "3", "4", "5" }));
+        jComboBox22.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JComboBox combo = (JComboBox)evt.getSource(); 
+            	jComboBox22ActionPerformed(evt);
+                if (combo.getSelectedItem().equals("-5")){
+                	opinioes[21] = "-5: Detesto";
+                }
+                if (combo.getSelectedItem().equals("-4")){
+                	opinioes[21] = "-4: Acho muito ruim";
+                }
+                if (combo.getSelectedItem().equals("-3")){
+                	opinioes[21] = "-3: Acho bastante ruim";
+                }
+                if (combo.getSelectedItem().equals("-2")){
+                	opinioes[21] = "-2: Acho ruim";
+                }
+                if (combo.getSelectedItem().equals("-1")){
+                	opinioes[21] = "-1: Acho um pouco ruim";
+                }
+                if (combo.getSelectedItem().equals("0")){
+                	opinioes[21] = "0 : Não conheço";
+                }
+                if (combo.getSelectedItem().equals("1")){
+                	opinioes[21] = "1 : Não é ruim";
+                }
+                if (combo.getSelectedItem().equals("2")){
+                	opinioes[21] = "2 : É bonzinho";
+                }
+                if (combo.getSelectedItem().equals("3")){
+                	opinioes[21] = "3: Bastante bom";
+                }
+                if (combo.getSelectedItem().equals("4")){
+                	opinioes[21] = "4: Muito bom";
+                }
+                if (combo.getSelectedItem().equals("5")){
+                	opinioes[21] = "5: Incrível. sensacional. impressionante";
+                }
+            }
+        });
+
+
+        jComboBox23.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "-5", "-4", "-3", "-2", "-1", "0", "1", "2", "3", "4", "5" }));
+        jComboBox23.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JComboBox combo = (JComboBox)evt.getSource(); 
+            	jComboBox23ActionPerformed(evt);
+                if (combo.getSelectedItem().equals("-5")){
+                	opinioes[22] = "-5: Detesto";
+                }
+                if (combo.getSelectedItem().equals("-4")){
+                	opinioes[22] = "-4: Acho muito ruim";
+                }
+                if (combo.getSelectedItem().equals("-3")){
+                	opinioes[22] = "-3: Acho bastante ruim";
+                }
+                if (combo.getSelectedItem().equals("-2")){
+                	opinioes[22] = "-2: Acho ruim";
+                }
+                if (combo.getSelectedItem().equals("-1")){
+                	opinioes[22] = "-1: Acho um pouco ruim";
+                }
+                if (combo.getSelectedItem().equals("0")){
+                	opinioes[22] = "0 : Não conheço";
+                }
+                if (combo.getSelectedItem().equals("1")){
+                	opinioes[22] = "1 : Não é ruim";
+                }
+                if (combo.getSelectedItem().equals("2")){
+                	opinioes[22] = "2 : É bonzinho";
+                }
+                if (combo.getSelectedItem().equals("3")){
+                	opinioes[22] = "3: Bastante bom";
+                }
+                if (combo.getSelectedItem().equals("4")){
+                	opinioes[22] = "4: Muito bom";
+                }
+                if (combo.getSelectedItem().equals("5")){
+                	opinioes[22] = "5: Incrível. sensacional. impressionante";
+                }
+            }
+        });
+
 
         jLabel25.setText("Marmitaria da Mama:");
 
-        jComboBox24.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jComboBox24.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "-5", "-4", "-3", "-2", "-1", "0", "1", "2", "3", "4", "5" }));
+        jComboBox24.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JComboBox combo = (JComboBox)evt.getSource(); 
+            	jComboBox24ActionPerformed(evt);
+                if (combo.getSelectedItem().equals("-5")){
+                	opinioes[23] = "-5: Detesto";
+                }
+                if (combo.getSelectedItem().equals("-4")){
+                	opinioes[23] = "-4: Acho muito ruim";
+                }
+                if (combo.getSelectedItem().equals("-3")){
+                	opinioes[23] = "-3: Acho bastante ruim";
+                }
+                if (combo.getSelectedItem().equals("-2")){
+                	opinioes[23] = "-2: Acho ruim";
+                }
+                if (combo.getSelectedItem().equals("-1")){
+                	opinioes[23] = "-1: Acho um pouco ruim";
+                }
+                if (combo.getSelectedItem().equals("0")){
+                	opinioes[23] = "0 : Não conheço";
+                }
+                if (combo.getSelectedItem().equals("1")){
+                	opinioes[23] = "1 : Não é ruim";
+                }
+                if (combo.getSelectedItem().equals("2")){
+                	opinioes[23] = "2 : É bonzinho";
+                }
+                if (combo.getSelectedItem().equals("3")){
+                	opinioes[23] = "3: Bastante bom";
+                }
+                if (combo.getSelectedItem().equals("4")){
+                	opinioes[23] = "4: Muito bom";
+                }
+                if (combo.getSelectedItem().equals("5")){
+                	opinioes[23] = "5: Incrível. sensacional. impressionante";
+                }
+            }
+        });
 
         jLabel26.setText("Paladar:");
 
-        jComboBox25.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jComboBox25.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "-5", "-4", "-3", "-2", "-1", "0", "1", "2", "3", "4", "5" }));
+        jComboBox25.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JComboBox combo = (JComboBox)evt.getSource(); 
+            	jComboBox25ActionPerformed(evt);
+                if (combo.getSelectedItem().equals("-5")){
+                	opinioes[24] = "-5: Detesto";
+                }
+                if (combo.getSelectedItem().equals("-4")){
+                	opinioes[24] = "-4: Acho muito ruim";
+                }
+                if (combo.getSelectedItem().equals("-3")){
+                	opinioes[24] = "-3: Acho bastante ruim";
+                }
+                if (combo.getSelectedItem().equals("-2")){
+                	opinioes[24] = "-2: Acho ruim";
+                }
+                if (combo.getSelectedItem().equals("-1")){
+                	opinioes[24] = "-1: Acho um pouco ruim";
+                }
+                if (combo.getSelectedItem().equals("0")){
+                	opinioes[24] = "0 : Não conheço";
+                }
+                if (combo.getSelectedItem().equals("1")){
+                	opinioes[24] = "1 : Não é ruim";
+                }
+                if (combo.getSelectedItem().equals("2")){
+                	opinioes[24] = "2 : É bonzinho";
+                }
+                if (combo.getSelectedItem().equals("3")){
+                	opinioes[24] = "3: Bastante bom";
+                }
+                if (combo.getSelectedItem().equals("4")){
+                	opinioes[24] = "4: Muito bom";
+                }
+                if (combo.getSelectedItem().equals("5")){
+                	opinioes[24] = "5: Incrível. sensacional. impressionante";
+                }
+            }
+        });
 
         jLabel27.setText("Pedro da Picanha:");
 
-        jComboBox26.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jComboBox26.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "-5", "-4", "-3", "-2", "-1", "0", "1", "2", "3", "4", "5" }));
+        jComboBox26.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JComboBox combo = (JComboBox)evt.getSource(); 
+            	jComboBox26ActionPerformed(evt);
+                if (combo.getSelectedItem().equals("-5")){
+                	opinioes[25] = "-5: Detesto";
+                }
+                if (combo.getSelectedItem().equals("-4")){
+                	opinioes[25] = "-4: Acho muito ruim";
+                }
+                if (combo.getSelectedItem().equals("-3")){
+                	opinioes[25] = "-3: Acho bastante ruim";
+                }
+                if (combo.getSelectedItem().equals("-2")){
+                	opinioes[25] = "-2: Acho ruim";
+                }
+                if (combo.getSelectedItem().equals("-1")){
+                	opinioes[25] = "-1: Acho um pouco ruim";
+                }
+                if (combo.getSelectedItem().equals("0")){
+                	opinioes[25] = "0 : Não conheço";
+                }
+                if (combo.getSelectedItem().equals("1")){
+                	opinioes[25] = "1 : Não é ruim";
+                }
+                if (combo.getSelectedItem().equals("2")){
+                	opinioes[25] = "2 : É bonzinho";
+                }
+                if (combo.getSelectedItem().equals("3")){
+                	opinioes[25] = "3: Bastante bom";
+                }
+                if (combo.getSelectedItem().equals("4")){
+                	opinioes[25] = "4: Muito bom";
+                }
+                if (combo.getSelectedItem().equals("5")){
+                	opinioes[25] = "5: Incrível. sensacional. impressionante";
+                }
+            }
+        });
 
         jLabel28.setText("Qdoca Bar e Restaurante:");
 
-        jComboBox27.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jComboBox27.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "-5", "-4", "-3", "-2", "-1", "0", "1", "2", "3", "4", "5" }));
+        jComboBox27.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JComboBox combo = (JComboBox)evt.getSource(); 
+            	jComboBox27ActionPerformed(evt);
+                if (combo.getSelectedItem().equals("-5")){
+                	opinioes[26] = "-5: Detesto";
+                }
+                if (combo.getSelectedItem().equals("-4")){
+                	opinioes[26] = "-4: Acho muito ruim";
+                }
+                if (combo.getSelectedItem().equals("-3")){
+                	opinioes[26] = "-3: Acho bastante ruim";
+                }
+                if (combo.getSelectedItem().equals("-2")){
+                	opinioes[26] = "-2: Acho ruim";
+                }
+                if (combo.getSelectedItem().equals("-1")){
+                	opinioes[26] = "-1: Acho um pouco ruim";
+                }
+                if (combo.getSelectedItem().equals("0")){
+                	opinioes[26] = "0 : Não conheço";
+                }
+                if (combo.getSelectedItem().equals("1")){
+                	opinioes[26] = "1 : Não é ruim";
+                }
+                if (combo.getSelectedItem().equals("2")){
+                	opinioes[26] = "2 : É bonzinho";
+                }
+                if (combo.getSelectedItem().equals("3")){
+                	opinioes[26] = "3: Bastante bom";
+                }
+                if (combo.getSelectedItem().equals("4")){
+                	opinioes[26] = "4: Muito bom";
+                }
+                if (combo.getSelectedItem().equals("5")){
+                	opinioes[26] = "5: Incrível. sensacional. impressionante";
+                }
+            }
+        });
 
-        jLabel29.setText("Restaurante BrasÃ­lia:");
+        jLabel29.setText("Restaurante Brasilia:");
 
-        jComboBox28.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jComboBox28.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "-5", "-4", "-3", "-2", "-1", "0", "1", "2", "3", "4", "5" }));
+        jComboBox28.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JComboBox combo = (JComboBox)evt.getSource(); 
+            	jComboBox28ActionPerformed(evt);
+                if (combo.getSelectedItem().equals("-5")){
+                	opinioes[27] = "-5: Detesto";
+                }
+                if (combo.getSelectedItem().equals("-4")){
+                	opinioes[27] = "-4: Acho muito ruim";
+                }
+                if (combo.getSelectedItem().equals("-3")){
+                	opinioes[27] = "-3: Acho bastante ruim";
+                }
+                if (combo.getSelectedItem().equals("-2")){
+                	opinioes[27] = "-2: Acho ruim";
+                }
+                if (combo.getSelectedItem().equals("-1")){
+                	opinioes[27] = "-1: Acho um pouco ruim";
+                }
+                if (combo.getSelectedItem().equals("0")){
+                	opinioes[27] = "0 : Não conheço";
+                }
+                if (combo.getSelectedItem().equals("1")){
+                	opinioes[27] = "1 : Não é ruim";
+                }
+                if (combo.getSelectedItem().equals("2")){
+                	opinioes[27] = "2 : É bonzinho";
+                }
+                if (combo.getSelectedItem().equals("3")){
+                	opinioes[27] = "3: Bastante bom";
+                }
+                if (combo.getSelectedItem().equals("4")){
+                	opinioes[27] = "4: Muito bom";
+                }
+                if (combo.getSelectedItem().equals("5")){
+                	opinioes[27] = "5: Incrível. sensacional. impressionante";
+                }
+            }
+        });
 
         jLabel30.setText("Restaurante da Quadra:");
 
         jLabel31.setText("Restaurante do Alexandre:");
 
-        jComboBox30.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jComboBox30.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "-5", "-4", "-3", "-2", "-1", "0", "1", "2", "3", "4", "5" }));
+        jComboBox30.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JComboBox combo = (JComboBox)evt.getSource(); 
+            	jComboBox30ActionPerformed(evt);
+                if (combo.getSelectedItem().equals("-5")){
+                	opinioes[29] = "-5: Detesto";
+                }
+                if (combo.getSelectedItem().equals("-4")){
+                	opinioes[29] = "-4: Acho muito ruim";
+                }
+                if (combo.getSelectedItem().equals("-3")){
+                	opinioes[29] = "-3: Acho bastante ruim";
+                }
+                if (combo.getSelectedItem().equals("-2")){
+                	opinioes[29] = "-2: Acho ruim";
+                }
+                if (combo.getSelectedItem().equals("-1")){
+                	opinioes[29] = "-1: Acho um pouco ruim";
+                }
+                if (combo.getSelectedItem().equals("0")){
+                	opinioes[29] = "0 : Não conheço";
+                }
+                if (combo.getSelectedItem().equals("1")){
+                	opinioes[29] = "1 : Não é ruim";
+                }
+                if (combo.getSelectedItem().equals("2")){
+                	opinioes[29] = "2 : É bonzinho";
+                }
+                if (combo.getSelectedItem().equals("3")){
+                	opinioes[29] = "3: Bastante bom";
+                }
+                if (combo.getSelectedItem().equals("4")){
+                	opinioes[29] = "4: Muito bom";
+                }
+                if (combo.getSelectedItem().equals("5")){
+                	opinioes[29] = "5: Incrível. sensacional. impressionante";
+                }
+            }
+        });
 
-        jLabel32.setText("Restaurante do ParanÃ¡:");
+        jLabel32.setText("Restaurante do Parana:");
 
-        jComboBox31.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jComboBox31.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "-5", "-4", "-3", "-2", "-1", "0", "1", "2", "3", "4", "5" }));
+        jComboBox31.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JComboBox combo = (JComboBox)evt.getSource(); 
+            	jComboBox31ActionPerformed(evt);
+                if (combo.getSelectedItem().equals("-5")){
+                	opinioes[30] = "-5: Detesto";
+                }
+                if (combo.getSelectedItem().equals("-4")){
+                	opinioes[30] = "-4: Acho muito ruim";
+                }
+                if (combo.getSelectedItem().equals("-3")){
+                	opinioes[30] = "-3: Acho bastante ruim";
+                }
+                if (combo.getSelectedItem().equals("-2")){
+                	opinioes[30] = "-2: Acho ruim";
+                }
+                if (combo.getSelectedItem().equals("-1")){
+                	opinioes[30] = "-1: Acho um pouco ruim";
+                }
+                if (combo.getSelectedItem().equals("0")){
+                	opinioes[30] = "0 : Não conheço";
+                }
+                if (combo.getSelectedItem().equals("1")){
+                	opinioes[30] = "1 : Não é ruim";
+                }
+                if (combo.getSelectedItem().equals("2")){
+                	opinioes[30] = "2 : É bonzinho";
+                }
+                if (combo.getSelectedItem().equals("3")){
+                	opinioes[30] = "3: Bastante bom";
+                }
+                if (combo.getSelectedItem().equals("4")){
+                	opinioes[30] = "4: Muito bom";
+                }
+                if (combo.getSelectedItem().equals("5")){
+                	opinioes[30] = "5: Incrível. sensacional. impressionante";
+                }
+            }
+        });
 
         jLabel33.setText("Restaurante Golden In China:");
 
-        jComboBox32.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jComboBox32.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "-5", "-4", "-3", "-2", "-1", "0", "1", "2", "3", "4", "5" }));
+        jComboBox32.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JComboBox combo = (JComboBox)evt.getSource(); 
+            	jComboBox32ActionPerformed(evt);
+                if (combo.getSelectedItem().equals("-5")){
+                	opinioes[31] = "-5: Detesto";
+                }
+                if (combo.getSelectedItem().equals("-4")){
+                	opinioes[31] = "-4: Acho muito ruim";
+                }
+                if (combo.getSelectedItem().equals("-3")){
+                	opinioes[31] = "-3: Acho bastante ruim";
+                }
+                if (combo.getSelectedItem().equals("-2")){
+                	opinioes[31] = "-2: Acho ruim";
+                }
+                if (combo.getSelectedItem().equals("-1")){
+                	opinioes[31] = "-1: Acho um pouco ruim";
+                }
+                if (combo.getSelectedItem().equals("0")){
+                	opinioes[31] = "0 : Não conheço";
+                }
+                if (combo.getSelectedItem().equals("1")){
+                	opinioes[31] = "1 : Não é ruim";
+                }
+                if (combo.getSelectedItem().equals("2")){
+                	opinioes[31] = "2 : É bonzinho";
+                }
+                if (combo.getSelectedItem().equals("3")){
+                	opinioes[31] = "3: Bastante bom";
+                }
+                if (combo.getSelectedItem().equals("4")){
+                	opinioes[31] = "4: Muito bom";
+                }
+                if (combo.getSelectedItem().equals("5")){
+                	opinioes[31] = "5: Incrível. sensacional. impressionante";
+                }
+            }
+        });
+
 
         jLabel34.setText("Restaurante Lay China:");
 
-        jComboBox33.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jComboBox33.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "-5", "-4", "-3", "-2", "-1", "0", "1", "2", "3", "4", "5" }));
+        jComboBox33.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JComboBox combo = (JComboBox)evt.getSource(); 
+            	jComboBox33ActionPerformed(evt);
+                if (combo.getSelectedItem().equals("-5")){
+                	opinioes[32] = "-5: Detesto";
+                }
+                if (combo.getSelectedItem().equals("-4")){
+                	opinioes[32] = "-4: Acho muito ruim";
+                }
+                if (combo.getSelectedItem().equals("-3")){
+                	opinioes[32] = "-3: Acho bastante ruim";
+                }
+                if (combo.getSelectedItem().equals("-2")){
+                	opinioes[32] = "-2: Acho ruim";
+                }
+                if (combo.getSelectedItem().equals("-1")){
+                	opinioes[32] = "-1: Acho um pouco ruim";
+                }
+                if (combo.getSelectedItem().equals("0")){
+                	opinioes[32] = "0 : Não conheço";
+                }
+                if (combo.getSelectedItem().equals("1")){
+                	opinioes[32] = "1 : Não é ruim";
+                }
+                if (combo.getSelectedItem().equals("2")){
+                	opinioes[32] = "2 : É bonzinho";
+                }
+                if (combo.getSelectedItem().equals("3")){
+                	opinioes[32] = "3: Bastante bom";
+                }
+                if (combo.getSelectedItem().equals("4")){
+                	opinioes[32] = "4: Muito bom";
+                }
+                if (combo.getSelectedItem().equals("5")){
+                	opinioes[32] = "5: Incrível. sensacional. impressionante";
+                }
+            }
+        });
+
 
         jLabel35.setText("Riso:");
 
-        jComboBox34.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jComboBox34.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "-5", "-4", "-3", "-2", "-1", "0", "1", "2", "3", "4", "5" }));
+        jComboBox34.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JComboBox combo = (JComboBox)evt.getSource(); 
+            	jComboBox34ActionPerformed(evt);
+                if (combo.getSelectedItem().equals("-5")){
+                	opinioes[33] = "-5: Detesto";
+                }
+                if (combo.getSelectedItem().equals("-4")){
+                	opinioes[33] = "-4: Acho muito ruim";
+                }
+                if (combo.getSelectedItem().equals("-3")){
+                	opinioes[33] = "-3: Acho bastante ruim";
+                }
+                if (combo.getSelectedItem().equals("-2")){
+                	opinioes[33] = "-2: Acho ruim";
+                }
+                if (combo.getSelectedItem().equals("-1")){
+                	opinioes[33] = "-1: Acho um pouco ruim";
+                }
+                if (combo.getSelectedItem().equals("0")){
+                	opinioes[33] = "0 : Não conheço";
+                }
+                if (combo.getSelectedItem().equals("1")){
+                	opinioes[33] = "1 : Não é ruim";
+                }
+                if (combo.getSelectedItem().equals("2")){
+                	opinioes[33] = "2 : É bonzinho";
+                }
+                if (combo.getSelectedItem().equals("3")){
+                	opinioes[33] = "3: Bastante bom";
+                }
+                if (combo.getSelectedItem().equals("4")){
+                	opinioes[33] = "4: Muito bom";
+                }
+                if (combo.getSelectedItem().equals("5")){
+                	opinioes[33] = "5: Incrível. sensacional. impressionante";
+                }
+            }
+        });
+
 
         jLabel36.setText("Spolleto:");
 
-        jComboBox35.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jComboBox35.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "-5", "-4", "-3", "-2", "-1", "0", "1", "2", "3", "4", "5" }));
+        jComboBox35.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JComboBox combo = (JComboBox)evt.getSource(); 
+            	jComboBox35ActionPerformed(evt);
+                if (combo.getSelectedItem().equals("-5")){
+                	opinioes[34] = "-5: Detesto";
+                }
+                if (combo.getSelectedItem().equals("-4")){
+                	opinioes[34] = "-4: Acho muito ruim";
+                }
+                if (combo.getSelectedItem().equals("-3")){
+                	opinioes[34] = "-3: Acho bastante ruim";
+                }
+                if (combo.getSelectedItem().equals("-2")){
+                	opinioes[34] = "-2: Acho ruim";
+                }
+                if (combo.getSelectedItem().equals("-1")){
+                	opinioes[34] = "-1: Acho um pouco ruim";
+                }
+                if (combo.getSelectedItem().equals("0")){
+                	opinioes[34] = "0 : Não conheço";
+                }
+                if (combo.getSelectedItem().equals("1")){
+                	opinioes[34] = "1 : Não é ruim";
+                }
+                if (combo.getSelectedItem().equals("2")){
+                	opinioes[34] = "2 : É bonzinho";
+                }
+                if (combo.getSelectedItem().equals("3")){
+                	opinioes[34] = "3: Bastante bom";
+                }
+                if (combo.getSelectedItem().equals("4")){
+                	opinioes[34] = "4: Muito bom";
+                }
+                if (combo.getSelectedItem().equals("5")){
+                	opinioes[34] = "5: Incrível. sensacional. impressionante";
+                }
+            }
+        });
+
 
         jLabel37.setText("Super China Restaurante:");
 
-        jComboBox36.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jComboBox36.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "-5", "-4", "-3", "-2", "-1", "0", "1", "2", "3", "4", "5" }));
+        jComboBox36.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JComboBox combo = (JComboBox)evt.getSource(); 
+            	jComboBox36ActionPerformed(evt);
+                if (combo.getSelectedItem().equals("-5")){
+                	opinioes[35] = "-5: Detesto";
+                }
+                if (combo.getSelectedItem().equals("-4")){
+                	opinioes[35] = "-4: Acho muito ruim";
+                }
+                if (combo.getSelectedItem().equals("-3")){
+                	opinioes[35] = "-3: Acho bastante ruim";
+                }
+                if (combo.getSelectedItem().equals("-2")){
+                	opinioes[35] = "-2: Acho ruim";
+                }
+                if (combo.getSelectedItem().equals("-1")){
+                	opinioes[35] = "-1: Acho um pouco ruim";
+                }
+                if (combo.getSelectedItem().equals("0")){
+                	opinioes[35] = "0 : Não conheço";
+                }
+                if (combo.getSelectedItem().equals("1")){
+                	opinioes[35] = "1 : Não é ruim";
+                }
+                if (combo.getSelectedItem().equals("2")){
+                	opinioes[35] = "2 : É bonzinho";
+                }
+                if (combo.getSelectedItem().equals("3")){
+                	opinioes[35] = "3: Bastante bom";
+                }
+                if (combo.getSelectedItem().equals("4")){
+                	opinioes[35] = "4: Muito bom";
+                }
+                if (combo.getSelectedItem().equals("5")){
+                	opinioes[35] = "5: Incrível. sensacional. impressionante";
+                }
+            }
+        });
+
 
         jLabel38.setText("Trailer do Marcus:");
 
-        jComboBox37.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jComboBox37.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "-5", "-4", "-3", "-2", "-1", "0", "1", "2", "3", "4", "5" }));
+        jComboBox37.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JComboBox combo = (JComboBox)evt.getSource(); 
+            	jComboBox37ActionPerformed(evt);
+                if (combo.getSelectedItem().equals("-5")){
+                	opinioes[36] = "-5: Detesto";
+                }
+                if (combo.getSelectedItem().equals("-4")){
+                	opinioes[36] = "-4: Acho muito ruim";
+                }
+                if (combo.getSelectedItem().equals("-3")){
+                	opinioes[36] = "-3: Acho bastante ruim";
+                }
+                if (combo.getSelectedItem().equals("-2")){
+                	opinioes[36] = "-2: Acho ruim";
+                }
+                if (combo.getSelectedItem().equals("-1")){
+                	opinioes[36] = "-1: Acho um pouco ruim";
+                }
+                if (combo.getSelectedItem().equals("0")){
+                	opinioes[36] = "0 : Não conheço";
+                }
+                if (combo.getSelectedItem().equals("1")){
+                	opinioes[36] = "1 : Não é ruim";
+                }
+                if (combo.getSelectedItem().equals("2")){
+                	opinioes[36] = "2 : É bonzinho";
+                }
+                if (combo.getSelectedItem().equals("3")){
+                	opinioes[36] = "3: Bastante bom";
+                }
+                if (combo.getSelectedItem().equals("4")){
+                	opinioes[36] = "4: Muito bom";
+                }
+                if (combo.getSelectedItem().equals("5")){
+                	opinioes[36] = "5: Incrível. sensacional. impressionante";
+                }
+            }
+        });
 
-        jLabel39.setText("TuxÃ¡:");
 
-        jComboBox38.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jLabel39.setText("Tuxa:");
+
+        jComboBox38.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "-5", "-4", "-3", "-2", "-1", "0", "1", "2", "3", "4", "5" }));
+        jComboBox38.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JComboBox combo = (JComboBox)evt.getSource(); 
+            	jComboBox38ActionPerformed(evt);
+                if (combo.getSelectedItem().equals("-5")){
+                	opinioes[37] = "-5: Detesto";
+                }
+                if (combo.getSelectedItem().equals("-4")){
+                	opinioes[37] = "-4: Acho muito ruim";
+                }
+                if (combo.getSelectedItem().equals("-3")){
+                	opinioes[37] = "-3: Acho bastante ruim";
+                }
+                if (combo.getSelectedItem().equals("-2")){
+                	opinioes[37] = "-2: Acho ruim";
+                }
+                if (combo.getSelectedItem().equals("-1")){
+                	opinioes[37] = "-1: Acho um pouco ruim";
+                }
+                if (combo.getSelectedItem().equals("0")){
+                	opinioes[37] = "0 : Não conheço";
+                }
+                if (combo.getSelectedItem().equals("1")){
+                	opinioes[37] = "1 : Não é ruim";
+                }
+                if (combo.getSelectedItem().equals("2")){
+                	opinioes[37] = "2 : É bonzinho";
+                }
+                if (combo.getSelectedItem().equals("3")){
+                	opinioes[37] = "3: Bastante bom";
+                }
+                if (combo.getSelectedItem().equals("4")){
+                	opinioes[37] = "4: Muito bom";
+                }
+                if (combo.getSelectedItem().equals("5")){
+                	opinioes[37] = "5: Incrível. sensacional. impressionante";
+                }
+            }
+        });
+
 
         jLabel40.setText("Varandas bar e restaurante:");
 
-        jComboBox39.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jComboBox39.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "-5", "-4", "-3", "-2", "-1", "0", "1", "2", "3", "4", "5" }));
+        jComboBox39.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JComboBox combo = (JComboBox)evt.getSource(); 
+            	jComboBox39ActionPerformed(evt);
+                if (combo.getSelectedItem().equals("-5")){
+                	opinioes[38] = "-5: Detesto";
+                }
+                if (combo.getSelectedItem().equals("-4")){
+                	opinioes[38] = "-4: Acho muito ruim";
+                }
+                if (combo.getSelectedItem().equals("-3")){
+                	opinioes[38] = "-3: Acho bastante ruim";
+                }
+                if (combo.getSelectedItem().equals("-2")){
+                	opinioes[38] = "-2: Acho ruim";
+                }
+                if (combo.getSelectedItem().equals("-1")){
+                	opinioes[38] = "-1: Acho um pouco ruim";
+                }
+                if (combo.getSelectedItem().equals("0")){
+                	opinioes[38] = "0 : Não conheço";
+                }
+                if (combo.getSelectedItem().equals("1")){
+                	opinioes[38] = "1 : Não é ruim";
+                }
+                if (combo.getSelectedItem().equals("2")){
+                	opinioes[38] = "2 : É bonzinho";
+                }
+                if (combo.getSelectedItem().equals("3")){
+                	opinioes[38] = "3: Bastante bom";
+                }
+                if (combo.getSelectedItem().equals("4")){
+                	opinioes[38] = "4: Muito bom";
+                }
+                if (combo.getSelectedItem().equals("5")){
+                	opinioes[38] = "5: Incrível. sensacional. impressionante";
+                }
+            }
+        });
+
 
         jLabel24.setText("Marmitaria Bom Paladar:");
 
-        jComboBox20.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jComboBox20.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "-5", "-4", "-3", "-2", "-1", "0", "1", "2", "3", "4", "5" }));
+        jComboBox20.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JComboBox combo = (JComboBox)evt.getSource(); 
+            	jComboBox20ActionPerformed(evt);
+                if (combo.getSelectedItem().equals("-5")){
+                	opinioes[19] = "-5: Detesto";
+                }
+                if (combo.getSelectedItem().equals("-4")){
+                	opinioes[19] = "-4: Acho muito ruim";
+                }
+                if (combo.getSelectedItem().equals("-3")){
+                	opinioes[19] = "-3: Acho bastante ruim";
+                }
+                if (combo.getSelectedItem().equals("-2")){
+                	opinioes[19] = "-2: Acho ruim";
+                }
+                if (combo.getSelectedItem().equals("-1")){
+                	opinioes[19] = "-1: Acho um pouco ruim";
+                }
+                if (combo.getSelectedItem().equals("0")){
+                	opinioes[19] = "0 : Não conheço";
+                }
+                if (combo.getSelectedItem().equals("1")){
+                	opinioes[19] = "1 : Não é ruim";
+                }
+                if (combo.getSelectedItem().equals("2")){
+                	opinioes[19] = "2 : É bonzinho";
+                }
+                if (combo.getSelectedItem().equals("3")){
+                	opinioes[19] = "3: Bastante bom";
+                }
+                if (combo.getSelectedItem().equals("4")){
+                	opinioes[19] = "4: Muito bom";
+                }
+                if (combo.getSelectedItem().equals("5")){
+                	opinioes[19] = "5: Incrível. sensacional. impressionante";
+                }
+            }
+        });
 
-        jComboBox29.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+
+        jComboBox29.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "-5", "-4", "-3", "-2", "-1", "0", "1", "2", "3", "4", "5" }));
+        jComboBox29.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JComboBox combo = (JComboBox)evt.getSource(); 
+            	jComboBox29ActionPerformed(evt);
+                if (combo.getSelectedItem().equals("-5")){
+                	opinioes[28] = "-5: Detesto";
+                }
+                if (combo.getSelectedItem().equals("-4")){
+                	opinioes[28] = "-4: Acho muito ruim";
+                }
+                if (combo.getSelectedItem().equals("-3")){
+                	opinioes[28] = "-3: Acho bastante ruim";
+                }
+                if (combo.getSelectedItem().equals("-2")){
+                	opinioes[28] = "-2: Acho ruim";
+                }
+                if (combo.getSelectedItem().equals("-1")){
+                	opinioes[28] = "-1: Acho um pouco ruim";
+                }
+                if (combo.getSelectedItem().equals("0")){
+                	opinioes[28] = "0 : Não conheço";
+                }
+                if (combo.getSelectedItem().equals("1")){
+                	opinioes[28] = "1 : Não é ruim";
+                }
+                if (combo.getSelectedItem().equals("2")){
+                	opinioes[28] = "2 : É bonzinho";
+                }
+                if (combo.getSelectedItem().equals("3")){
+                	opinioes[28] = "3: Bastante bom";
+                }
+                if (combo.getSelectedItem().equals("4")){
+                	opinioes[28] = "4: Muito bom";
+                }
+                if (combo.getSelectedItem().equals("5")){
+                	opinioes[28] = "5: Incrível. sensacional. impressionante";
+                }
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -592,8 +2172,136 @@ public class GUICadastrarUsuario extends javax.swing.JInternalFrame {
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton2ActionPerformed
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton2ActionPerformed
 
-
+    private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton2ActionPerformed
+   
+    private void jComboBox2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton2ActionPerformed
+    
+    private void jComboBox3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton2ActionPerformed
+    
+    private void jComboBox4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton2ActionPerformed
+    
+    private void jComboBox5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton2ActionPerformed
+    
+    private void jComboBox6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton2ActionPerformed
+    
+    private void jComboBox7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton2ActionPerformed
+    
+    private void jComboBox8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton2ActionPerformed
+    
+    private void jComboBox9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        
+    }
+    
+    private void jComboBox10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+       
+    }
+    private void jComboBox11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        
+    }
+    private void jComboBox12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        
+    }
+    private void jComboBox13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        
+    }
+    private void jComboBox14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        
+    }
+    private void jComboBox15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        
+    }
+    private void jComboBox16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        
+    }
+    private void jComboBox17ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        
+    }
+    private void jComboBox18ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        
+    }
+    private void jComboBox19ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        
+    }
+    private void jComboBox20ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        
+    }
+    private void jComboBox21ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        
+    }
+    private void jComboBox22ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        
+    }
+    private void jComboBox23ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        
+    }
+    private void jComboBox24ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        
+    }
+    private void jComboBox25ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        
+    }
+    private void jComboBox26ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        
+    }
+    private void jComboBox27ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        
+    }
+    private void jComboBox28ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        
+    }
+    private void jComboBox29ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        
+    }
+    private void jComboBox30ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        
+    }
+    private void jComboBox31ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        
+    }
+    private void jComboBox32ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        
+    }
+    private void jComboBox33ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        
+    }
+    private void jComboBox34ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        
+    }
+    private void jComboBox35ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        
+    }
+    private void jComboBox36ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        
+    }
+    private void jComboBox37ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        
+    }
+    private void jComboBox38ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        
+    }
+    private void jComboBox39ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        
+    }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;

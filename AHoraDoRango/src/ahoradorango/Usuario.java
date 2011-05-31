@@ -1,11 +1,10 @@
 package ahoradorango;
 
-import excecoes.EstabelecimentoInvalidoException;
+import java.util.ArrayList;
+import java.util.List;
+
 import excecoes.NomeInvalidoException;
-import excecoes.OpiniaoInvalidaException;
 import excecoes.PerfilInvalidoException;
-import excecoes.PerfilNaoAlteravelException;
-import excecoes.PermissaoDeAlteracaoInvalidaException;
 
 /**
  * Uma classe que representa um usuario do sistema de recomendacoes
@@ -16,6 +15,19 @@ import excecoes.PermissaoDeAlteracaoInvalidaException;
  */
 public class Usuario
 {
+	
+	public Usuario() {
+		this.perfis = new ArrayList<Perfil>();
+	}
+	
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+
+	public void setPerfis(List<Perfil> perfis) {
+		this.perfis = perfis;
+	}
+
 	/**
 	 * O nome do usuario
 	 */
@@ -23,7 +35,7 @@ public class Usuario
 	/**
 	 * O perfil do usuario
 	 */
-	private Perfil perfil;
+	private List<Perfil> perfis;
 	
 	/**
 	 * @param nome O nome do usuario
@@ -44,16 +56,15 @@ public class Usuario
 		}
 		
 		this.nome = nome;
-		this.perfil = perfil;
 	}
 
 	/**
 	 * Devolve o perfil do usuario
 	 * @return O perfil
 	 */
-	public Perfil getPerfil()
+	public List<Perfil> getPerfis()
 	{
-		return perfil;
+		return perfis;
 	}
 
 	/**
@@ -75,37 +86,54 @@ public class Usuario
 	 * maximo permitido (veja Perfil)
 	 * @throws PerfilNaoAlteravelException Se o perfil do usuario nao puder ser alterado
 	 */
-	public void alterarOpiniao(Estabelecimento estabelecimento, Integer novaOpiniao) throws EstabelecimentoInvalidoException, OpiniaoInvalidaException, PerfilNaoAlteravelException
-	{
-		perfil.setOpiniao(estabelecimento, novaOpiniao);
+	/*
+	public void alterarOpiniao(Estabelecimento estabelecimento, Integer novaOpiniao) 
+		throws EstabelecimentoInvalidoException, OpiniaoInvalidaException, PerfilNaoAlteravelException {
+		
+		for (Perfil perfil : perfis) {
+			perfil.setOpiniao(estabelecimento, novaOpiniao);
+		}
 	}
+	*/
 	
 	/**
 	 * Informa se o usuario pode ser alterado
 	 * @return A informacao
 	 */
+	/*
 	public boolean ehUsuarioAlteravel()
 	{
-		return perfil.getPerfilAlteravel() == Alteravel.SIM;
+		for (Perfil perfil : perfis) {
+			if (perfil.getPerfilAlteravel() == Alteravel.SIM)
+				return true;
+		}
+		return false;
 	}
+	*/
 	
 	/**
 	 * Altera a permissao de alteracao do usuario
 	 * @param novaPermissao A nova permissao
 	 * @throws PermissaoDeAlteracaoInvalidaException Se novaPermissao for igual a null
 	 */
+	/*
 	public void mudaPermissaoAlteracao(Alteravel novaPermissao) throws PermissaoDeAlteracaoInvalidaException
 	{
-		perfil.setPerfilAlteravel(novaPermissao);
+		for (Perfil perfil : perfis) {
+			perfil.setPerfilAlteravel(novaPermissao);
+		}
 	}
+	*/
 	
 	/**
 	 * Devolve a opiniao do usuario sobre um estabelecimento
 	 * @param estabelecimento O estabelecimento
 	 * @return A opiniao
 	 */
+	/*
 	public int getOpiniao(Estabelecimento estabelecimento)
 	{
 		return perfil.getOpiniao(estabelecimento);
-	}	
+	}
+	*/
 }

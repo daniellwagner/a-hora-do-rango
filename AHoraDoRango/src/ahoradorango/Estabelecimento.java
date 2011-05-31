@@ -9,9 +9,9 @@ public class Estabelecimento {
 	private String endereco;
 	private TipoDeAlmoco tipoDeAlmocoServido;
 
-	public Estabelecimento(String nome, String endereco,
-			TipoDeAlmoco tipoDeAlmocoServido) throws NomeInvalidoException,
-			EnderecoInvalidoException, TipoDeAlmocoInvalidoException {
+	public Estabelecimento(String nome, String endereco, TipoDeAlmoco tipoDeAlmocoServido) 
+		throws NomeInvalidoException, EnderecoInvalidoException, TipoDeAlmocoInvalidoException {
+	
 		if (nome == null) {
 			throw new NomeInvalidoException("Nome nulo.");
 		}
