@@ -11,6 +11,7 @@
 
 package ahoradorango;
 
+import java.io.IOException;
 import java.util.Date;
 import java.util.GregorianCalendar;
 
@@ -147,7 +148,8 @@ public class GUICadastrarUsuario extends javax.swing.JInternalFrame {
         jLabel2.setText("Bar do Cuscuz e Restaurante:");
         
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "-5", "-4", "-3", "-2", "-1", "0", "1", "2", "3", "4", "5" }));
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] {"-5: Detesto", "-4: Acho muito ruim", 
+        		"-3: Acho bastante ruim", "-2: Acho ruim", "-1: Acho um pouco ruim", "0 : Não conheco", "1 : Não e ruim", "2 : E bonzinho", "3: Bastante bom", "4: Muito bom", "5: Incrível. sensacional. impressionante"}));
         jComboBox1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 JComboBox combo = (JComboBox)evt.getSource(); 
@@ -411,15 +413,24 @@ public class GUICadastrarUsuario extends javax.swing.JInternalFrame {
         jButton1.setText("Cadastrar");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
+            	String stringOpinioes="";
                 jButton1ActionPerformed(evt);
                 if(evt.getSource() == jButton1){
                 	usuarioDigitado = jTextField1.getText();
-                	String stringOpinioes = "";
+                	
                 	for (int i = 0; i <opinioes.length; i++){
                 		stringOpinioes = stringOpinioes + opinioes[i] + ";";
+                		//stringOpinioes.concat(opinioes[i] + ";");
                 	}
-                	novoPerfil = leitorOpinioes.getDataHoraString(new GregorianCalendar()) +"   " + usuarioDigitado +"  " + stringOpinioes;
-                    System.out.println(novoPerfil);
+                
+                	novoPerfil = leitorOpinioes.getDataHoraString(new GregorianCalendar()) +";" + usuarioDigitado +";" + stringOpinioes;
+                    try {
+						new EscritorOpinioes(novoPerfil);
+					} catch (IOException e) {
+						
+						e.printStackTrace();
+					}
+                	System.out.println(novoPerfil);
                 }
                 
                 
@@ -2163,26 +2174,26 @@ public class GUICadastrarUsuario extends javax.swing.JInternalFrame {
         );
 
         pack();
-    }// </editor-fold>//GEN-END:initComponents
+    }
 
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
+     
+    }
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton2ActionPerformed
+
+    }
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton2ActionPerformed
+      
+    }
 
     private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton2ActionPerformed
+     
+    }
    
     private void jComboBox2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton2ActionPerformed
+     
+    }
     
     private void jComboBox3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:

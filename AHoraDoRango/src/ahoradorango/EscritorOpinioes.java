@@ -5,11 +5,11 @@ import java.io.FileWriter;
 import java.io.IOException;
 
 public class EscritorOpinioes {
-	public EscritorOpinioes(String novoUsuario) throws IOException {
+	public EscritorOpinioes(String novoPerfil) throws IOException {
 		BufferedWriter out = new BufferedWriter(new FileWriter(
 				"opinioes-dos-usuarios-v2.data", true));
 		out.newLine();
-		out.write(novoUsuario);
+		out.write(novoPerfil);
 		out.close();
 	}
 

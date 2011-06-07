@@ -44,6 +44,7 @@ public class Perfil {
 	 */
 	private Alteravel perfilAlteravel;
 
+
 	/**
 	 * O construtor inicializa perfilAlteravel como Alteravel.NAO e considera
 	 * que a opiniao sobre o i-esimo estabelecimento esta na i-esima posicao do
@@ -128,6 +129,7 @@ public class Perfil {
 		}
 
 		this.momentoCriacaoDoPerfil = momentoCriacaoDoPerfil;
+		
 
 		perfilAlteravel = Alteravel.NAO;
 	}

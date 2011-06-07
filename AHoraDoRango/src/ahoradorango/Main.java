@@ -14,7 +14,7 @@ public class Main {
 	private static GregorianCalendar cal;
 	public Main(GregorianCalendar cal) {
 		this.cal = cal;
-		// TODO Auto-generated constructor stub
+		
 	}
 
     /**

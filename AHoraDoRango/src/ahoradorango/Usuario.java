@@ -1,6 +1,7 @@
 package ahoradorango;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 import excecoes.NomeInvalidoException;
@@ -36,6 +37,8 @@ public class Usuario
 	 * O perfil do usuario
 	 */
 	private List<Perfil> perfis;
+	
+	private HashMap<Estabelecimento, Integer> estabelecimentoOpiniao;
 	
 	/**
 	 * @param nome O nome do usuario
